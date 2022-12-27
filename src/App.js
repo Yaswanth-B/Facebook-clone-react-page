@@ -1,19 +1,18 @@
-import Nav from './Components/Nav'
-import LeftBar from './Components/LeftBar'
-import RightBar from './Components/RightBar'
-import Footer from './Components/Footer'
-import CenterBar from './Components/CentreBar'
+// interal component dependencies
+import { Nav, LeftBar, RightBar, Footer, CentreBar } from './components'
+
+// style dependencies
 import './index.css'
 
+// top level component to compose the rest of the webpage
 function App() {
 	return (
 		<>
 			<Nav />
 			<div className="container">
 				<LeftBar />
-				<CenterBar />
+				<CentreBar />
 				<RightBar />
-				
 			</div>
 			<Footer/>
 		</>

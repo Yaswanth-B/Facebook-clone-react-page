@@ -1,7 +1,7 @@
 const SideBarAds = ({link}) => {
 	return (
 		<>
-			<img src={link} class="siderbar-ads" />
+			<img src={link} className="siderbar-ads" />
 		</>
 	)
 }

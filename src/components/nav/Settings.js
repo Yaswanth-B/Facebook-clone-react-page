@@ -1,20 +1,19 @@
 import Settinglink from "./Settinglink"
-import { useRef } from 'react'
-import UserProfile from "./UserProfile"
+import { useState, useEffect } from 'react'
+import UserProfile from "../centrebar/UserProfile"
 
 const Settings = () => {
 	
+	const [setlinks, setSetLinks] = useState([])
+	
+	useEffect(() => {
+		fetch(`http://localhost:5000/nav/settings/getsetlinks`)
+		.then(response => response.json())
+		.then(data => setSetLinks(data))
+	}, [])
 
-
-	const settingref = useRef()
-	const setlinks = [
-		{ id: 1, link: "https://i.postimg.cc/QCcPNYRV/setting.png", name: "Settings and Privacy" },
-		{ id: 2, link: "https://i.postimg.cc/C5tydfK6/help.png", name: "Help and Support" },
-		{ id: 3, link: "https://i.postimg.cc/5yt1XVSj/display.png", name: "Display and Accessibility" },
-		{ id: 4, link: "https://i.postimg.cc/PJC9GrMb/logout.png", name: "Logout" },
-	]
 	return (
-		<div className="settings-menu" ref={settingref}>
+		<div className="settings-menu">
 			<div id="dark-btn">
 				<span></span>
 			</div>

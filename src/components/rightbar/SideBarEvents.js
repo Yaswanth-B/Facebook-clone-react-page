@@ -7,7 +7,7 @@ const SideBarEvents = ({day,month,eventname, location}) => {
 				</div>
 				<div className="right-event">
 						<h4>{eventname}</h4>
-						<p><i class="fas fa-map-marker-alt"></i>{location}</p>
+						<p><i className="fas fa-map-marker-alt"></i>{location}</p>
 						<a href="#">More Info</a>
 				</div>
 		</div>
