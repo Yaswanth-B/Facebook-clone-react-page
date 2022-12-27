@@ -1,20 +1,17 @@
-
 {
   "name": "aspire4",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-		"client": "cd frontend && npm start",
-		"server": "cd backend && npm run dev",
-		"start": "concurrently \"npm run client\" \"npm run server\"  ",
+    "client": "cd frontend && npm start",
+    "server": "cd backend && npm run dev",
+    "start": "concurrent \"npm run client\" \"npm run server\" "
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0"
   },
   "keywords": [],
-  "author": "Yashwanth B",
+  "author": "Yaswanth B",
   "license": "ISC"
 }
-...
-"devDependencies": {
-  "concurrently": "^1.0.0"
-}
-
