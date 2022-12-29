@@ -79,5 +79,23 @@ router.put('/addlike', (req,res) =>{
 	//Post.findOneAndUpdate({ _id: post_id }, update, {new:true})
 })
 
-
+// {
+// 	"first_name": "Pam",
+// 	"last_name": "Smith",
+// 	"post_text": "p@gmail.om",
+// 	"post_img_link": "Female",
+// 	"liked_users": [
+// 			"63add4c3cc95dd75178b1c1d"
+// 	],
+// 	"disliked_users": [
+// 			"63add517eab843b730d1f10c"
+// 	],
+// 	"relevant_users": [
+// 			"63add4c3cc95dd75178b1c1d",
+// 			"63add517eab843b730d1f10c"
+// 	],
+// 	"_id": "63add75eeab843b730d1f110",
+// 	"post_date": "2022-12-29T18:07:26.369Z",
+// 	"__v": 0
+// }
 module.exports = router

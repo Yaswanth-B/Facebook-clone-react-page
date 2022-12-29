@@ -11,12 +11,17 @@ app.use('/nav/settings', require('./routes/nav/settingsexp'))
 app.use('/centrebar/storygallery', require('./routes/centrebar/storyexp'))
 app.use('/nav', require('./routes/nav/navexp'))
 
-// default routes
-app.use('/default', require('./src/routes/default'))
+
 // protected routes
 app.use('/user', require('./src/routes/protected/user'))
 app.use('/event', require('./src/routes/protected/event'))
 app.use('/post', require('./src/routes/protected/post'))
+app.use('/story', require('./src/routes/protected/story'))
+
+//default routes
+app.use('/navicon', require('./src/routes/default/navicon'))
+app.use('/feature', require('./src/routes/default/feature'))
+app.use('/setting', require('./src/routes/default/setting'))
 
 const PORT = process.env.PORT || 5000
 

@@ -51,6 +51,7 @@ router.post('/', (req,res) =>{
 			res.sendStatus(401)
 		} else {
 			res.send(data)
+			console.log("Unable to create the user " + data)
 		}
 	})
 })
@@ -58,14 +59,18 @@ router.post('/', (req,res) =>{
 	
 
 
-// //Sample Postman input
-// // {
-// // 	"id": 5, 
-// // 	"user" : "Yaswanth",
-// // 	"text" : "Sample Text",
-// // 	"proflink" : "https://i.postimg.cc/cHg22LhR/profile-pic.png",
-// // 	"postlink" : "https://i.postimg.cc/9fjhGTY6/feed-image-1.png", 
-// // 	"type" : "post",
-// // 	"posttext":"Sample Post Text"
-// // 	}
+// {
+// 	"first_name": "Yaswanth",
+// 	"last_name": "Biruduraju",
+// 	"email": "y@g.om",
+// 	"gender": "Male",
+// 	"img_url": "https://i.postimg.cc/cHg22LhR/profile-pic.png",
+// 	"shortcut_list": [
+// 			{ "link": "https://i.postimg.cc/3JHVf7vG/shortcut-1.png", "text": "Web Developers" },
+// 		{ "link": "https://i.postimg.cc/rFCbvb1P/shortcut-2.png", "text": "Web Design course" },
+// 		{"link": "https://i.postimg.cc/0yk3xfZ2/shortcut-3.png", "text": "Full Strack Development" },
+// 		{"link": "https://i.postimg.cc/Z5wQqdDP/shortcut-4.png", "text": "Website Experts" }
+// 	]
+ 
+// }
 module.exports = router

@@ -1,7 +1,7 @@
 // external dependencies
 const express = require('express')
 const cors = require('cors')
-const { Event } = require('../../../mongo/model')
+const { Story } = require('../../../mongo/model')
 
 // configuring the router
 const router = express.Router()
@@ -22,16 +22,16 @@ router.get('/', (req,res) =>{
 
 	const user_id = req.query.user_id
 
-	Event.find({ interested_users: user_id }, (err, dataArray) => {
+	Story.find({ relevant_users: user_id }, (err, dataArray) => {
 		if (err) {
 			console.log(err)
 			res.sendStatus(404).send({ err: err})
 		} else {
 			console.log(dataArray)
 			if (dataArray.length == 0) {
-				res.sendStatus(404).send({ err: "No events found for id: " + user_id})
-			} else {				
-				res.send(dataArray)	
+				res.sendStatus(404).send({ err: "No stories found for" + user_id})
+			} else {
+				res.send(dataArray)
 			}
 		}
 	})
@@ -44,28 +44,31 @@ router.post('/', (req,res) =>{
 
 	// do other constraint validation
 
-	const newEvent = new Event(req.body)
-	newEvent.save((err, data) => {
+	const newStory = new Story(req.body)	
+	newStory.save((err, data) => {
 		if (err) {
-			console.log("Event not added" + err)
+			console.log("Unable to create the story " + err)
 			res.sendStatus(401)
 		} else {
 			res.send(data)
-			console.log("Event added" + data)
+			console.log(data)
 		}
 	})
 })
+	
+	
 
+	
 // {
-// 	"event_name": "Social Media",
-// 	"location": "Hyderabad",
-// 	"interested_users": [
-// 			"63add517eab843b730d1f10c",
-// 			"63add4c3cc95dd75178b1c1d"
+// 	"story_text": "Alison",
+// 	"story_img_link": "https://i.postimg.cc/XNPtfdVs/member-1.png",
+// 	"story_link": "link1",
+// 	"relevant_users": [
+// 			"63add4c3cc95dd75178b1c1d",
+// 			"63add517eab843b730d1f10c"
 // 	],
-// 	"_id": "63add869fe4fd12926322c0e",
-// 	"event_date": "2022-12-29T18:11:53.100Z",
+// 	"_id": "63addc731267fac85887aaf0",
+// 	"story_date": "2022-12-29T18:29:07.657Z",
 // 	"__v": 0
 // }
-
 module.exports = router

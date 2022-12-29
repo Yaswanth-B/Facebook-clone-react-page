@@ -1,7 +1,7 @@
 // external dependencies
 const express = require('express')
 const cors = require('cors')
-const { Event } = require('../../../mongo/model')
+const { Feature } = require('../../../mongo/model')
 
 // configuring the router
 const router = express.Router()
@@ -20,9 +20,9 @@ router.use(cors({origin: "*",}))  //setting up CORS
 router.get('/', (req,res) =>{
 	// validate
 
-	const user_id = req.query.user_id
+	
 
-	Event.find({ interested_users: user_id }, (err, dataArray) => {
+	Feature.find((err, dataArray) => {
 		if (err) {
 			console.log(err)
 			res.sendStatus(404).send({ err: err})
@@ -44,28 +44,23 @@ router.post('/', (req,res) =>{
 
 	// do other constraint validation
 
-	const newEvent = new Event(req.body)
-	newEvent.save((err, data) => {
+	const newFeature = new Feature(req.body)
+	newFeature.save((err, data) => {
 		if (err) {
-			console.log("Event not added" + err)
+			console.log("Feature not added" + err)
 			res.sendStatus(401)
 		} else {
 			res.send(data)
-			console.log("Event added" + data)
+			console.log(data)
 		}
 	})
 })
 
 // {
-// 	"event_name": "Social Media",
-// 	"location": "Hyderabad",
-// 	"interested_users": [
-// 			"63add517eab843b730d1f10c",
-// 			"63add4c3cc95dd75178b1c1d"
-// 	],
-// 	"_id": "63add869fe4fd12926322c0e",
-// 	"event_date": "2022-12-29T18:11:53.100Z",
+// 	"feature_name": "Latest News",
+// 	"feature_image": "https://i.postimg.cc/RCj4MjnC/news.png",
+// 	"feature_link": "link1",
+// 	"_id": "63adde3523cac5e46b7186e8",
 // 	"__v": 0
 // }
-
 module.exports = router

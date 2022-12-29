@@ -10,7 +10,8 @@ const user_schema = new Schema({
 	email:					{ type: String, required: true, unique: true },
 	gender: 				{ type: String, required: true, enum: GENDERS }, 
 	img_url:				{ type: String },
-	join_date:			{ type: Date, default: Date.now }
+	join_date:			{ type: Date, default: Date.now },
+	shortcut_list:  { type: [Object]}
 });
 
 module.exports = user_schema
