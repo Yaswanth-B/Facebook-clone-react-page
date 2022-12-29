@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "cd frontend && npm start",
-    "server": "cd backend && npm run dev",
-    "start": "concurrent \"npm run client\" \"npm run server\" "
+    "frontend": "cd frontend && npm start",
+    "backend": "cd backend && npm run dev",
+    "dev": "concurrent \"npm run backend\" \"npm run frontend\" "
   },
   "devDependencies": {
     "concurrently": "^1.0.0"
   },
   "keywords": [],
   "author": "Yaswanth B",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^4.13.0"
+  }
 }
