@@ -2,6 +2,7 @@
 const express = require('express')
 const cors = require('cors')
 const { User } = require('../../../mongo/model')
+const {username} = require('../../../utils/validators/username')
 
 // configuring the router
 const router = express.Router()
@@ -41,19 +42,23 @@ router.get('/', (req,res) =>{
 
 router.post('/', (req,res) =>{
 	// do validation
-
+	
 	// do other constraint validation
 
-	const newUser = new User(req.body)	
-	newUser.save((err, data) => {
-		if (err) {
-			console.log("Unable to create the user " + err)
-			res.sendStatus(401)
-		} else {
-			res.send(data)
-			console.log("Unable to create the user " + data)
-		}
-	})
+	const newUser = new User(req.body)
+	
+	if(username(req.body.first_name)){
+		newUser.save((err, data) => {
+			if (err) {
+				console.log("Unable to create the user " + err)
+				res.sendStatus(401)
+			} else {
+				res.send(data)
+				console.log("Unable to create the user " + data)
+			}
+		})
+	}
+	
 })
 	
 	
