@@ -1,14 +1,15 @@
+//protected schema
 const user_schema = require('./user')
-// post
 const post_schema = require('./post')
-// event
 const event_schema = require('./event')
+const story_schema = require('./story')
 
+//default schema
 const feature_schema = require('./feature')
 const setting_schema = require('./setting')
 const navicon_schema = require('./navicon')
 
-const story_schema = require('./story')
+
 
 
 

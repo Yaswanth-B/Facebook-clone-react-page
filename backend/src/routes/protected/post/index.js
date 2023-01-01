@@ -10,12 +10,9 @@ router.use(express.json())
 router.use(cors({origin: "*",}))  //setting up CORS
 
 
-/**
- * End-point to return posts to display in user's timeline
- */
 
 /**
- * 
+ * End-point to return posts from the database
  */
 router.get('/', (req,res) =>{
 	// validate
@@ -39,6 +36,9 @@ router.get('/', (req,res) =>{
 
 })
 
+/**
+ * End-point to add a post to the database
+ */
 router.post('/', (req,res) =>{
 	// do validation
 

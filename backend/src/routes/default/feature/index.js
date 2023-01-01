@@ -9,19 +9,10 @@ router.use(express.urlencoded({ extended :false }))
 router.use(express.json())
 router.use(cors({origin: "*",}))  //setting up CORS
 
-
 /**
- * End-point to return posts to display in user's timeline
- */
-
-/**
- * 
+ * End-point to return all Features in the database
  */
 router.get('/', (req,res) =>{
-	// validate
-
-	
-
 	Feature.find((err, dataArray) => {
 		if (err) {
 			console.log(err)
@@ -39,6 +30,10 @@ router.get('/', (req,res) =>{
 
 })
 
+
+/**
+ * End-point to add a features to the database
+ */
 router.post('/', (req,res) =>{
 	// do validation
 

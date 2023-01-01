@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+
+//defining schema
 const setting_schema = new Schema({
 	setting_image: 				{ type: String, required: true },
 	setting_link:					{ type: String, required: true }, 

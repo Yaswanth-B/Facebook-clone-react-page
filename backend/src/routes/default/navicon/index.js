@@ -11,16 +11,9 @@ router.use(cors({origin: "*",}))  //setting up CORS
 
 
 /**
- * End-point to return posts to display in user's timeline
- */
-
-/**
- * 
+ * End-point to return all navicons from the database
  */
 router.get('/', (req,res) =>{
-	// validate
-
-	
 
 	NavIcon.find((err, dataArray) => {
 		if (err) {
@@ -39,11 +32,12 @@ router.get('/', (req,res) =>{
 
 })
 
+
+
+/**
+ * End-point to add a navicon to the database
+ */
 router.post('/', (req,res) =>{
-	// do validation
-
-	// do other constraint validation
-
 	const newNavIcon = new NavIcon(req.body)
 	newNavIcon.save((err, data) => {
 		if (err) {

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 
+//defining schema
 const post_schema = new Schema({
 	first_name: 			{ type: String, required: true },
 	last_name: 				{ type: String, required: true },	

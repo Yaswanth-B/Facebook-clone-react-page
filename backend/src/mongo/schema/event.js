@@ -2,6 +2,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+//defining schema
 const event_schema = new Schema({
 	event_name: 			{ type: String, required: true },
 	location: 				{ type: String, required: true },	

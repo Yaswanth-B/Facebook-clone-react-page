@@ -11,17 +11,9 @@ router.use(cors({origin: "*",}))  //setting up CORS
 
 
 /**
- * End-point to return posts to display in user's timeline
- */
-
-/**
- * 
+ * End-point to return all settings from the database
  */
 router.get('/', (req,res) =>{
-	// validate
-
-	
-
 	Setting.find((err, dataArray) => {
 		if (err) {
 			console.log(err)
@@ -39,6 +31,9 @@ router.get('/', (req,res) =>{
 
 })
 
+/**
+ * End-point to add a setting to the database
+ */
 router.post('/', (req,res) =>{
 	// do validation
 

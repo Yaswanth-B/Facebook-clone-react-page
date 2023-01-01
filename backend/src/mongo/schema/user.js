@@ -2,8 +2,10 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+//importing constant GENDERS from constants file
 const { GENDERS } = require('../../constants');
 
+//defining schema
 const user_schema = new Schema({
 	first_name: 		{ type: String, required: true },
 	last_name: 			{ type: String, required: true },
